@@ -4,23 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="897f785c-2b26-4111-8304-f468329bf53d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/BoardCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/Piece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/PieceColor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/PieceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/fr/codeflow/gameplay/BoardCreatorTest.java" afterDir="false" />
+    <list default="true" id="897f785c-2b26-4111-8304-f468329bf53d" name="Changes" comment="implements board creator">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/dataaccess/InMemoryBoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/entity/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/entity/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/BoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/MoveValidationParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/PlayerMovePieceInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/PlayerMovePieceInteractorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/PlayerMovePieceRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/validator/MoveForwardsForManValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/validator/MoveOnFreeSquareValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/validator/ValidationResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/usecase/validator/ValidationStep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/fr/codeflow/gameplay/usecase/PlayerMovePieceInteractorImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/BoardCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/entity/BoardCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/entity/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/PieceColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/entity/PieceColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/PieceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/entity/PieceType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/codeflow/gameplay/entity/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fr/codeflow/gameplay/BoardCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fr/codeflow/gameplay/entity/BoardCreatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,13 +36,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,31 +65,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/DEV/workspaces/draughtium/src/main/java/fr/codeflow/gameplay",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DEV/workspaces/draughtium/src/main/java/fr/codeflow/gameplay&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="fr.codeflow.gameplay.exception" />
+      <recent name="fr.codeflow.gameplay.usecases" />
+      <recent name="fr.codeflow.gameplay" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\DEV\workspaces\draughtium\src\main\java\fr\codeflow\gameplay" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="fr.codeflow.gameplay.exception" />
+      <recent name="fr.codeflow.gameplay.usecase" />
+      <recent name="fr.codeflow.gameplay.entities" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="fr.codeflow.gameplay.usecases" />
       <recent name="fr.codeflow.gameplay" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -91,25 +113,85 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="BoardCreatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in draughtium">
+    <configuration name="All in draughtium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="draughtium" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardCreatorTest.shouldHaveCreatedABoardWithActiveNumberedFrom1To50" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="draughtium" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.codeflow.gameplay.*" />
+          <option name="PATTERN" value="fr.codeflow.gameplay.entity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="fr.codeflow.gameplay" />
-      <option name="MAIN_CLASS_NAME" value="fr.codeflow.gameplay.BoardCreatorTest" />
+      <option name="PACKAGE_NAME" value="fr.codeflow.gameplay.entity" />
+      <option name="MAIN_CLASS_NAME" value="fr.codeflow.gameplay.entity.BoardCreatorTest" />
+      <option name="METHOD_NAME" value="shouldHaveCreatedABoardWithActiveNumberedFrom1To50" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerMovePieceInteractorImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="draughtium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.codeflow.gameplay.usecase.validator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.codeflow.gameplay.usecase" />
+      <option name="MAIN_CLASS_NAME" value="fr.codeflow.gameplay.usecase.PlayerMovePieceInteractorImplTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerMovePieceInteractorImplTest.shouldHaveMoveManFromOriginSquareToTargetSquare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="draughtium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.codeflow.gameplay.usecase.validator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.codeflow.gameplay.usecase" />
+      <option name="MAIN_CLASS_NAME" value="fr.codeflow.gameplay.usecase.PlayerMovePieceInteractorImplTest" />
+      <option name="METHOD_NAME" value="shouldHaveMoveManFromOriginSquareToTargetSquare" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerMovePieceInteractorImplTest.shouldThrowAIrregularMoveOnOccupiedSquareExceptionWhenMovingOnAOccupiedSquare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="draughtium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.codeflow.gameplay.usecase.validator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.codeflow.gameplay.usecase" />
+      <option name="MAIN_CLASS_NAME" value="fr.codeflow.gameplay.usecase.PlayerMovePieceInteractorImplTest" />
+      <option name="METHOD_NAME" value="shouldThrowAIrregularMoveOnOccupiedSquareExceptionWhenMovingOnAOccupiedSquare" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardCreatorTest" />
+        <item itemvalue="JUnit.All in draughtium" />
+        <item itemvalue="JUnit.PlayerMovePieceInteractorImplTest.shouldHaveMoveManFromOriginSquareToTargetSquare" />
+        <item itemvalue="JUnit.PlayerMovePieceInteractorImplTest" />
+        <item itemvalue="JUnit.PlayerMovePieceInteractorImplTest.shouldThrowAIrregularMoveOnOccupiedSquareExceptionWhenMovingOnAOccupiedSquare" />
+        <item itemvalue="JUnit.BoardCreatorTest.shouldHaveCreatedABoardWithActiveNumberedFrom1To50" />
       </list>
     </recent_temporary>
   </component>
@@ -121,8 +203,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655838045107</updated>
-      <workItem from="1655838047716" duration="5131000" />
+      <workItem from="1655838047716" duration="21815000" />
+      <workItem from="1655896841206" duration="16307000" />
     </task>
+    <task id="LOCAL-00001" summary="implements board creator">
+      <created>1655843359137</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655843359137</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,5 +229,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implements board creator" />
+    <option name="LAST_COMMIT_MESSAGE" value="implements board creator" />
   </component>
 </project>

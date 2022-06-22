@@ -1,4 +1,4 @@
-package fr.codeflow.gameplay;
+package fr.codeflow.gameplay.entity;
 
 
 public class Square {
@@ -14,6 +14,8 @@ public class Square {
     private int id;
     private boolean active;
     private Piece piece;
+
+    private Position position;
 
     public int getId() {
         return id;
@@ -37,5 +39,13 @@ public class Square {
 
     public void setPiece(Piece piece) {
         this.piece = piece;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 }
